@@ -59,8 +59,7 @@ class Teacher(models.Model):
     tr_group = models.CharField(max_length=50)
     tr_code = models.CharField(max_length=100)
     tr_clave = models.CharField(max_length=200)
-    tr_bday = models.DateField()
-    tr_status = models.CharField(max_length=50)
+    tr_bday = models.DateField(blank=True, null=True)
 
 
 class Course(models.Model):
@@ -69,6 +68,7 @@ class Course(models.Model):
     start = models.TimeField()
     end = models.TimeField()
     status = models.BooleanField(default=True)
+    grade = models.CharField(max_length=10)
     periodicity = models.CharField(max_length=200)
 
 class CourseTeacher(models.Model):
